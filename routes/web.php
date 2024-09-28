@@ -37,4 +37,10 @@ Route::get('/view/post/{id}',[UserController::class,'loadPostPage'])->middleware
 Route::get('/profile',[UserController::class,'loadProfile'])->middleware('user');
 Route::get('/view/profile/{user_id}',[UserController::class,'loadGuestProfile'])->middleware('user');
 
-Route::get('admin/home',[AdminController::class,'loadHomePage'])->middleware('admin');
+Route::controller(AdminController::class)->middleware('admin')->prefix('admin')->group(function(){
+
+    Route::get('home','loadHomePage')->name('admin.home');
+    Route::get('/post/{id}','show')->name('admin.show');
+    Route::delete('/home/{id}','destroy')->name('admin.destroy');
+
+});

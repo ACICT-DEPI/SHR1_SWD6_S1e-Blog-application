@@ -287,13 +287,13 @@
       </li><!-- End Dashboard Nav -->
 
 
-      <li class="nav-heading">Pages</li>
+      {{-- <li class="nav-heading">Pages</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="users-profile.html">
+        <a class="nav-link collapsed" href="#" onclick="return false;";>
           <i class="bi bi-person"></i>
-          <span>Profile</span>
+          <span>All Posts : {{ count($data) }}</span>
         </a>
-      </li><!-- End Profile Page Nav -->
+      </li><!-- End Profile Page Nav --> --}}
     </ul>
 
   </aside><!-- End Sidebar-->

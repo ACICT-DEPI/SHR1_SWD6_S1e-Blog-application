@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('LinkedIn')->nullable();
             $table->string('Instagram')->nullable();
             $table->string('about')->nullable();
-            $table->string('image')->nullable();
+            $table->string('image')->nullable()->default('avatar.jpg');;
             $table->timestamps();
         });
     }
