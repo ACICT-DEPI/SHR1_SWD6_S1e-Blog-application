@@ -11,27 +11,46 @@ use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
+    public function index(){
+        $logged_user = Auth::user();
+        $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
+
+        $user_image = $user_profile_data->image;
+        $data = Post::get();
+        $users = User::get();
+        return view('admin.users',compact('users','logged_user','user_image','data'));
+    }
+    public function showUser($id){
+        $logged_user = Auth::user();
+        $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
+        $user_image = $user_profile_data->image;
+        $data = Post::get();
+        $users = User::get();
+
+        $user =User::findorfail($id);
+        $userDetails = UserProfile::findorfail($id);
+        // return $userDetails;
+        return view('admin.showUser',compact('logged_user','user','user_image','users','data','userDetails'));
+    }
      public function loadHomePage(){
         $logged_user = Auth::user();
         $data = Post::get();
+        $users = User::get();
+        $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
+        $user_image = $user_profile_data->image;
 
-        // foreach ($data as $user) {
-        //      dd($posts = $user->posts; // Access posts for each user
-        //     // Do something with $posts
-        // }
-        // $post_data = Post::get();
-        // foreach ($post_data as $post) {
-        //     dd($post->user_id); // Access user_id for each post in the collection
-        // }
 
-        return view('admin.home-page',compact('logged_user','data'));
-        // return view('admin.home-page',compact('logged_user'));
+        return view('admin.home-page',compact('logged_user','data','user_image','users'));
+
     }
     public function show($id){
         $logged_user = Auth::user();
-
+        $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
+        $data = Post::get();
+        $users = User::get();
+        $user_image = $user_profile_data->image;
         $post =Post::findorfail($id);
-        return view('admin.show',compact('logged_user','post'));
+        return view('admin.show',compact('logged_user','post','user_image','data','users'));
     }
     public function destroy($id){
         $post = Post::findOrFail($id);
@@ -52,6 +71,28 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.home')->with('msg', 'Deleted successfully');
+
+    }
+    public function deleteUser($id){
+        $user = User::findOrFail($id);
+        $user_profile_data = UserProfile::where('user_id',$user->id)->first();
+        $user_image = $user_profile_data->image;
+        if ($user) {
+            if (!empty($user_image) && Storage::exists('public/images/'.$user_image)) {
+                // Delete the image from storage
+                Storage::delete('public/images/'.$user_image);
+            }
+
+            // Check if the images directory is empty, and delete it if it is
+            if (Storage::exists('public/images') && empty(Storage::files('public/images'))) {
+                Storage::deleteDirectory('public/images');
+            }
+
+
+            User::destroy($id);
+        }
+
+        return redirect()->route('admin.users')->with('msg', 'Deleted successfully');
 
     }
 }

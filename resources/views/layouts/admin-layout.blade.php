@@ -215,10 +215,10 @@
 
         <li class="nav-item dropdown pe-3">
 
-          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">{{$logged_user->name}}</span>
-          </a><!-- End Profile Iamge Icon -->
+            <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                <img class="rounded-circle" width="30px" height="30px" src="{{ asset('storage/images/'.$user_image) }}" alt="profile image">
+                <span class="d-none d-md-block dropdown-toggle ps-2">{{$logged_user->name}}</span>
+              </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
@@ -287,13 +287,19 @@
       </li><!-- End Dashboard Nav -->
 
 
-      {{-- <li class="nav-heading">Pages</li>
+      <li class="nav-heading">Pages</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="#" onclick="return false;";>
-          <i class="bi bi-person"></i>
+        <a class="nav-link collapsed" href="{{ route('admin.home') }}" >
+          <i class="bi bi-postcard-fill"></i>
           <span>All Posts : {{ count($data) }}</span>
         </a>
-      </li><!-- End Profile Page Nav --> --}}
+      </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('admin.users') }}">
+          <i class="bi bi-person"></i>
+          <span>All users : {{ count($users) }}</span>
+        </a>
+      </li><!-- End Profile Page Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->

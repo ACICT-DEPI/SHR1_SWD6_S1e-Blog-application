@@ -43,4 +43,8 @@ Route::controller(AdminController::class)->middleware('admin')->prefix('admin')-
     Route::get('/post/{id}','show')->name('admin.show');
     Route::delete('/home/{id}','destroy')->name('admin.destroy');
 
+    Route::get('users','index')->name('admin.users');
+    Route::get('/users/{id}','showUser')->name('admin.showUser');
+    Route::delete('/users/{id}','deleteUser')->name('admin.deleteUser');
+
 });
