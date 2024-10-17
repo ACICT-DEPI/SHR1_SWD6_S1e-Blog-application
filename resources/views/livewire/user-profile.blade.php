@@ -1,6 +1,6 @@
  {{-- here we can check if logged user is the one with the profile then, if yes
     give access to edit otherwise just show a profile only.
-    
+
     this approach seems to have an issue let's sort it out in this way.. --}}
        <div class="row">
         <div class="col-xl-4">
@@ -93,7 +93,7 @@
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
-                  
+
                     <livewire:profile-image-edit :existingImage="$user_data->image" />
                         {{-- this is to pass image from datbase to edit image component --}}
                         {{-- create component for the remaining form --}}

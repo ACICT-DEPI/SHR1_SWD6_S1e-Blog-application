@@ -46,5 +46,7 @@ Route::controller(AdminController::class)->middleware('admin')->prefix('admin')-
     Route::get('users','index')->name('admin.users');
     Route::get('/users/{id}','showUser')->name('admin.showUser');
     Route::delete('/users/{id}','deleteUser')->name('admin.deleteUser');
+    Route::put('/users/{id}/admin','SwitchToAdmin')->name('admin.SwitchToAdmin');
+    Route::put('/users/{id}/user','SwitchToUser')->name('admin.SwitchToUser');
 
 });

@@ -43,11 +43,33 @@
                 <td>{{ $user->id }}</td>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->role }}</td>
+                @if ($user->role == 1)
+                <td>Admin</td>
+                @else
+                <td>User</td>
+                @endif
 
 
                 <td>
                 <a href="{{ route('admin.showUser',$user->id) }}" class="btn btn-success">Show</a>
+                {{-- <a href="{{ route('admin.SwitchToAdmin',$user->id) }}" class="btn btn-primary">Switch to admin</a> --}}
+                @if ($user->role == 0)
+
+                <form action="{{ route('admin.SwitchToAdmin', $user->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-primary">Switch to admin</button>
+                </form>
+                @else
+
+                <form action="{{ route('admin.SwitchToUser', $user->id) }}" method="POST" style="display:inline;">
+                    @csrf
+                    @method('PUT')
+                    <button type="submit" class="btn btn-primary">Switch to user</button>
+                </form>
+                @endif
+
+
                 <form action="{{ route('admin.deleteUser',$user->id) }}" method="post" class=" d-inline">
                     @csrf
                     @method('delete')

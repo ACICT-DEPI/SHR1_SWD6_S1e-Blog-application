@@ -28,7 +28,7 @@ class AuthController extends Controller
             'email' => 'required|email|unique:users',
             'password' => 'required|min:6|max:8|confirmed',
         ]);
-        
+
         try {
             $user = new User;
             $user->name = $request->name;
@@ -41,10 +41,10 @@ class AuthController extends Controller
             $user_profile->user_id = $user->id;
             $user_profile->save();
 
-            return redirect('/registration/form')->with('success','You Have been Registered Successfully!');
+            return redirect('/login/form')->with('success','You Have been Registered Successfully!');
         } catch (\Exception $e) {
             return redirect('/registration/form')->with('error',$e->getMessage());
-            
+
         }
     }
 
@@ -61,13 +61,13 @@ class AuthController extends Controller
             'email' => 'required',
             'password' => 'required|min:6|max:8',
         ]);
-        
+
         try {
             // login logic here
             $userCredentials = $request->only('email','password');
 
             if(Auth::attempt($userCredentials)){
-                // redirect user to home page based on role 
+                // redirect user to home page based on role
                 // this allow us to use single login page to authenticate users with different roles..
 
                 if(auth()->user()->role == 0){ //here role is a column I added in users table
@@ -77,7 +77,7 @@ class AuthController extends Controller
                 }else{
                     return redirect('/')->with('error','Error to find your role');
                 }
-                
+
             }else{
                 return redirect('/login/form')->with('error','Wrong User Credentials');
             }
@@ -123,7 +123,7 @@ class AuthController extends Controller
                 $message->to($data['email'])->subject($data['title']);
             });
 
-            
+
             $passwordReset = new PasswordReset;
             $passwordReset->email = $request->email;
             $passwordReset->token = $token;
@@ -134,7 +134,7 @@ class AuthController extends Controller
         }else{
             return redirect('/forgot/password')->with('error','email does not exist!');
         }
-    
+
     }
 
     public function loadResetPassword(Request $request){

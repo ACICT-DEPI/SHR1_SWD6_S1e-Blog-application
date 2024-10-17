@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Storage;
 class AdminController extends Controller
 {
     public function index(){
+
         $logged_user = Auth::user();
         $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
 
@@ -20,6 +21,7 @@ class AdminController extends Controller
         $users = User::get();
         return view('admin.users',compact('users','logged_user','user_image','data'));
     }
+
     public function showUser($id){
         $logged_user = Auth::user();
         $user_profile_data = UserProfile::where('user_id',$logged_user->id)->first();
@@ -32,6 +34,54 @@ class AdminController extends Controller
         // return $userDetails;
         return view('admin.showUser',compact('logged_user','user','user_image','users','data','userDetails'));
     }
+    public function deleteUser($id){
+        $user = User::findOrFail($id);
+        $user_profile_data = UserProfile::where('user_id',$user->id)->first();
+        $user_image = $user_profile_data->image;
+        if ($user) {
+            if (!empty($user_image) && Storage::exists('public/images/'.$user_image)&& $user_image !="avatar.jpg") {
+                // Delete the image from storage
+                Storage::delete('public/images/'.$user_image);
+            }
+
+            // Check if the images directory is empty, and delete it if it is
+            if (Storage::exists('public/images') && empty(Storage::files('public/images'))) {
+                Storage::deleteDirectory('public/images');
+            }
+
+
+        }
+        User::destroy($id);
+
+        return redirect()->route('admin.users')->with('msg', 'Deleted successfully');
+
+    }
+
+    public function SwitchToAdmin(Request $request,$id){
+        $user = User::findorfail($id);
+        // return $user;
+        $user->role =1;
+        $user->save();
+        return redirect()->route('admin.users');
+
+    }
+    public function SwitchToUser($id){
+        $user = User::findorfail($id);
+        // return $user;
+        $user->role = 0;
+        $user->save();
+        return redirect()->route('admin.users');
+
+    }
+
+
+
+
+
+
+
+
+    //post page
      public function loadHomePage(){
         $logged_user = Auth::user();
         $data = Post::get();
@@ -73,26 +123,5 @@ class AdminController extends Controller
         return redirect()->route('admin.home')->with('msg', 'Deleted successfully');
 
     }
-    public function deleteUser($id){
-        $user = User::findOrFail($id);
-        $user_profile_data = UserProfile::where('user_id',$user->id)->first();
-        $user_image = $user_profile_data->image;
-        if ($user) {
-            if (!empty($user_image) && Storage::exists('public/images/'.$user_image)) {
-                // Delete the image from storage
-                Storage::delete('public/images/'.$user_image);
-            }
 
-            // Check if the images directory is empty, and delete it if it is
-            if (Storage::exists('public/images') && empty(Storage::files('public/images'))) {
-                Storage::deleteDirectory('public/images');
-            }
-
-
-            User::destroy($id);
-        }
-
-        return redirect()->route('admin.users')->with('msg', 'Deleted successfully');
-
-    }
 }
