@@ -15,14 +15,13 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    //here load a registration form
-    //all this code are in my github repo so check them as fast as possible..
+    
     public function loadRegisterForm(){
         return view("register");
     }
 
     public function registerUser(Request $request){
-        // perform validation here
+
         $request->validate([
             'name' => 'required',
             'email' => 'required|email|unique:users',
@@ -36,7 +35,7 @@ class AuthController extends Controller
             $user->password = Hash::make( $request->password );
             $user->save();
 
-            // add user_id in user_profiles table
+
             $user_profile = new UserProfile;
             $user_profile->user_id = $user->id;
             $user_profile->save();
@@ -48,10 +47,7 @@ class AuthController extends Controller
         }
     }
 
-    // so if you don't understand what I am doing, please go to video description
-    // and go through the custom auth videos and you'll be able to along with me here
 
-    // create a function to load a login form
     public function loadLoginPage(){
         return view('login-page');
     }
@@ -63,14 +59,13 @@ class AuthController extends Controller
         ]);
 
         try {
-            // login logic here
+
             $userCredentials = $request->only('email','password');
 
             if(Auth::attempt($userCredentials)){
-                // redirect user to home page based on role
-                // this allow us to use single login page to authenticate users with different roles..
 
-                if(auth()->user()->role == 0){ //here role is a column I added in users table
+
+                if(auth()->user()->role == 0){
                     return redirect('/user/home');
                 }elseif(auth()->user()->role == 1){
                     return redirect('/admin/home');
@@ -85,18 +80,18 @@ class AuthController extends Controller
             return redirect('/login/form')->with('error',$e->getMessage());
         }
     }
-    // perform logout function here
+
     public function LogoutUser(Request $request){
         Session::flush();
         Auth::logout();
         return redirect('/');
     }
-    // this for password resetting..
+
     public function forgotPassword(){
         return view('forgot-password');
     }
 
-    // perform email sending logic here
+
     public function forgot(Request $request){
         // validate here
         $request->validate([
@@ -142,7 +137,7 @@ class AuthController extends Controller
         if(isset($request->token) && count($resetData) > 0){
             $user = User::where('id',$resetData[0]['user_id'])->get();
             foreach ($user as $user_data) {
-                # code...
+
             }
             return view('reset-password',compact('user_data'));
         }else{
@@ -150,7 +145,7 @@ class AuthController extends Controller
         }
     }
 
-    // perform password reset logic here
+
 
     public function ResetPassword(Request $request){
         $request->validate([
@@ -161,7 +156,7 @@ class AuthController extends Controller
             $user->password = Hash::make($request->password);
             $user->save();
 
-            // delete reset token
+
             PasswordReset::where('email',$request->user_email)->delete();
 
             return redirect('/login/form')->with('success','Password Changed Successfully');
