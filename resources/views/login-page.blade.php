@@ -28,13 +28,6 @@
  <!-- Template Main CSS File -->
  <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -49,8 +42,8 @@
 
               <div class="d-flex justify-content-center py-4">
                 <a href="index.html" class="logo d-flex align-items-center w-auto">
-                  <img src="assets/img/logo.png" alt="">
-                  <span class="d-none d-lg-block">NiceAdmin</span>
+                  <img src="../assets/img/logo.jpg" alt="">
+                  <span class="d-none d-lg-block"><img src="../assets/img/blogapp.jpg" alt=""></span>
                 </a>
               </div><!-- End Logo -->
 
@@ -88,7 +81,7 @@
                       <p class="small mb-0">Forgot password? <a href="/forgot/password">Recover here!</a></p>
                     </div>
                     <div class="col-12">
-                      <button class="btn btn-primary w-100" type="submit">Login</button>
+                      <button class="login-btn w-100" type="submit">Login</button>
                     </div>
                     <div class="col-12">
                       <p class="small mb-0">Don't have account? <a href="/registration/form">Create an account</a></p>
@@ -99,11 +92,7 @@
               </div>
 
               <div class="credits">
-                <!-- All the links in the footer should remain intact. -->
-                <!-- You can delete the links only if you purchased the pro version. -->
-                <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                Designed by <a href="https://bootstrapmade.com/">Spiders</a>
               </div>
 
             </div>

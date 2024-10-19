@@ -5,7 +5,8 @@
         </button>
         <div class="tm-site-header">
             <div class="mb-3 mx-auto tm-site-logo"><i class="fas fa-times fa-2x"></i></div>
-            <h1 class="text-center">Blog App</h1>
+           <img src="../../../assets/img/logo.jpg" alt="">
+           <img src="../../../assets/img/blogapp.jpg" alt="">
         </div>
         @yield('nav')
         

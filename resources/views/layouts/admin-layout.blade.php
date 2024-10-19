@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Dashboard </title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,17 +30,6 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-  {{-- i will change the link href to use laravel blade format so remove the normal links
-        and change all links as for style.css
-    --}}
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -50,8 +39,8 @@
 
     <div class="d-flex align-items-center justify-content-between">
       <a href="/admin/home" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
-        <span class="d-none d-lg-block">NiceAdmin</span>
+        <img src="../../assets/img/logo.jpg" alt="">
+        <span class="d-none d-lg-block">Blog App</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -167,8 +156,8 @@
               <a href="#">
                 <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
                 <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>noran Hudson</h4>
+                  <p>Hello! How are you ?</p>
                   <p>4 hrs. ago</p>
                 </div>
               </a>
@@ -181,8 +170,8 @@
               <a href="#">
                 <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
                 <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Ansam yaseen</h4>
+                  <p>Check my last project and support me bro</p>
                   <p>6 hrs. ago</p>
                 </div>
               </a>
@@ -195,8 +184,8 @@
               <a href="#">
                 <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
                 <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>osama</h4>
+                  <p>Busy? we have a new idea about graduation </p>
                   <p>8 hrs. ago</p>
                 </div>
               </a>
@@ -229,7 +218,7 @@
               <hr class="dropdown-divider">
             </li>
 
-            {{-- <li>
+             {{-- <li>
               <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
                 <i class="bi bi-person"></i>
                 <span>My Profile</span>
@@ -254,10 +243,10 @@
                 <i class="bi bi-question-circle"></i>
                 <span>Need Help?</span>
               </a>
-            </li> --}}
+            </li> 
             <li>
               <hr class="dropdown-divider">
-            </li>
+            </li> --}}
 
             <li>
               <a class="dropdown-item d-flex align-items-center" href="/logout">
@@ -311,14 +300,14 @@
   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
     <div class="copyright">
-      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+      &copy; Copyright <strong><span>Blog App</span></strong>. All Rights Reserved
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">Spiders</a>
     </div>
   </footer><!-- End Footer -->
 

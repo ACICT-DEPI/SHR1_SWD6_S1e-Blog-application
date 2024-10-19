@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Dashboard - NiceAdmin Bootstrap Template</title>
+  <title>Dashboard - Blog App</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -30,17 +30,7 @@
   <!-- Template Main CSS File -->
   <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-  {{-- i will change the link href to use laravel blade format so remove the normal links
-        and change all links as for style.css
-    --}}
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Sep 18 2023 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
 </head>
 
 <body>
@@ -322,7 +312,7 @@
       <!-- You can delete the links only if you purchased the pro version. -->
       <!-- Licensing information: https://bootstrapmade.com/license/ -->
       <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/ -->
-      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      Designed by <a href="https://bootstrapmade.com/">Spiders</a>
     </div>
   </footer><!-- End Footer -->
 

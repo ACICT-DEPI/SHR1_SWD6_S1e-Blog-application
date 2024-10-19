@@ -1,10 +1,4 @@
-/*
 
-TemplateMo 553 Xtra Blog
-
-https://templatemo.com/tm-553-xtra-blog
-
-*/
 
 html { overflow-x: hidden; }
 
@@ -28,9 +22,9 @@ hr {
 .form-control::placeholder { color: #999; }
 
 .tm-header {
-    background-color: #0CC;
-    color: white;
-
+    background-color: #f7faff;
+    color: #f7faff;
+    border-right: 1px solid #4133B7;
     position: fixed;
     top: 0;
     left: 0;
@@ -54,24 +48,11 @@ hr {
     height: 0;
 }
 
-.tm-site-header {
-    margin-top: 50px;
-    margin-bottom: 115px;
+
+.tm-site-header{
+    margin-top: -50px;
+    margin-bottom: 100px;
 }
-
-
-.tm-site-logo {
-    width: 75px;
-    height: 75px;
-    border-radius: 50%;
-    color: black;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.tm-site-logo i { color: #0CC; }
 
 .tm-main {
     margin-left: 400px;
@@ -93,7 +74,7 @@ hr {
 }
 
 .tm-nav-link {
-    color: white;
+    color: #6558d3;
     background-color: transparent;
     height: 75px;
     width: 100%;
@@ -107,8 +88,8 @@ hr {
 .tm-nav-item:hover .tm-nav-link,
 .tm-nav-item.active .tm-nav-link
  {
-    color: #0CC;
-    background-color: white;
+    color: #f7faff;
+    background-color: #6558d3;
     text-decoration: none;
 }
 
@@ -121,7 +102,7 @@ hr {
     max-width: 300px;
     height: 75px;
     display: block;
-    border: 1px solid white;
+    border: 1px solid #4133B7;
     margin-left: 10px;
     margin-top: -65px;
     position: absolute;
@@ -301,8 +282,8 @@ ul {
     cursor: not-allowed;
 }
 
-.tm-external-link { color: #0CC; }
-.tm-external-link:hover { color: #09b6b6; }
+.tm-external-link { color: #6558d3; }
+.tm-external-link:hover { color: #4133B7; }
 
 .tm-paging-wrapper {
     display: flex;
@@ -321,23 +302,28 @@ ul {
 .tm-copyright { text-align: right; }
 
 /* Single Post page */
-hr.tm-hr-primary { border-top: 5px solid #0CC; }
+hr.tm-hr-primary { border-top: 5px solid #6558d3; }
 
 video {
     width: 100%;
     height: auto;
 }
-/* يمكنك إضافة تنسيقات CSS لتحسين المظهر */
+
 .login-register-container {
     text-align: right;
     margin-top: 20px;
     margin-right: 20px;
   }
   .login-register-container a {
-    background-color: #0CC;
+    background-color: #6558d3;
     color: white;
     padding: 8px 43px;
     border: none;
+  }
+  .login-register-container a:hover {
+    background-color: #4133B7;
+    color: white;
+    transition: 0.3s ease;
   }
 
 .tm-comment {
@@ -354,7 +340,7 @@ video {
 
 .form-control {
     height: 45px;
-    border-color: #0CC;
+    border-color: #6558d3;
     border-radius: 0;
 }
 
@@ -386,17 +372,17 @@ figcaption { line-height: 1.4; }
 .tm-mt-40 { margin-top: 40px; }
 .tm-mt-100 { margin-top: 100px; }
 .tm-mr-20 { margin-right: 20px; }
-.tm-color-primary, span.tm-color-primary { color: #099; }
+.tm-color-primary, span.tm-color-primary { color: #6558d3; }
 a.tm-color-gray, .tm-color-gray { color: #999; }
-a.tm-color-gray:hover { color: #099; }
+a.tm-color-gray:hover { color: #6558d3; }
 .tm-bg-gray { background-color: #F3F4F5; }
 button:focus { outline: none; }
 a:hover {
     text-decoration: none;
-    color: #048c8c;
+    color: #ffffff;
 }
 
-a:hover figcaption { color: #056767; }
+a:hover figcaption { color: #ffffff; }
 .img-thumbnail { max-width: none; }
 .tm-about-pad { padding: 40px 35px; }
 .tm-person { max-width: 430px; }
@@ -489,7 +475,7 @@ a:hover figcaption { color: #056767; }
         position: fixed;
         left: 0;
         top: 0;
-        background-color: rgba(56, 204, 204, 0.75);
+        background-color:#6558d3;
         color: white;
         padding: 10px 15px;
         transition: all 0.3s ease;

@@ -8,7 +8,7 @@
             <li class="tm-nav-item"><a href="{{ route('site.show',['id'=>1]) }}" class="tm-nav-link">
             <i class="fas fa-pen"></i> Single Post
             </a></li>
-
+                
     </ul>
 </nav>
 @endsection

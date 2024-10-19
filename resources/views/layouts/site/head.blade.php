@@ -14,11 +14,5 @@
 <!-- Custom CSS -->
 <link href="{{ asset('assets/site/css/templatemo-xtra-blog.css') }}" rel="stylesheet">
 
-<!--
 
-TemplateMo 553 Xtra Blog
-
-https://templatemo.com/tm-553-xtra-blog
-
--->
 </head>
