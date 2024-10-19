@@ -1,0 +1,68 @@
+welcome back!
+-------------
+
+Blog application in Laravel 11 and Livewire 3
+_____________________________________________
+
+This app will have Realtime Updates powered by Livewire 3 Features..
+
+Features:(what we will cover)
+-----------------------------
+
+1.User Authentication: - part 1.
+---------------------- 
+Allow users to register, login, and logout & recover their passwords.
+
+2.Dashboard: - part 2 
+---------------------- 
+Provide a dashboard for authenticated users to manage their blog posts.
+
+3.Crud on Posts: - part 3
+-------------------------
+Enable users to create new blog posts with a title, content, image, and 
+be able to edit and delete their posts.
+
+4.View Posts: - part 4
+---------------------- 
+Display a list of all blog posts on the home page or a dedicated blog page.
+
+5.Like & Unlike the post. - part 5
+----------------------------------
+Allow users to like and unlike posts
+
+6.Comments: - part 6
+--------------------
+Allow readers to leave comments on blog posts.
+
+7.Subscribe /Follow: - part 7
+---------------------
+a user can subscribe/Follow to another user.
+
+8.user profiles: - part 8
+-------------------------
+user can update their profiles also other users can see others profiles
+
+9.show profiles on a post: - part 9
+-------------------------
+other users can see others profiles on a post..
+
+10.Show More posts on post page in the post view page - part 10 (Today's task)
+-----------------------------------------------------
+
+11.show number of Followers & comments on dashboard
+---------------------------------------------------
+
+so let me show what we will be building in this tutorial series..
+
+this is for the sake of having a short demo but the project have many 
+
+awesome features that you should never miss to see..
+
+so the project source codes.. are on my github
+
+so enjoy this journey.. 
+
+Learn and master Laravel 11 and Livewire 3...
+
+so see you on the first video..
+
