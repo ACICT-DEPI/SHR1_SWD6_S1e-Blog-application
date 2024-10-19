@@ -89,7 +89,7 @@ class AuthController extends Controller
     public function LogoutUser(Request $request){
         Session::flush();
         Auth::logout();
-        return redirect('/login/form');
+        return redirect('/');
     }
     // this for password resetting..
     public function forgotPassword(){

@@ -3,12 +3,21 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Site\SiteContoller;
 use App\Http\Controllers\UserController;
 use App\Livewire\MyPosts;
 
-Route::get('/', function () {
-    return view('login-page');
+// Route::get('/', function () {
+//     return view('login-page');
+// });
+Route::get('/test/site',function(){
+    return view('site.index');
 });
+Route::get('/test/post',function(){
+    return view('site.post');
+});
+Route::get('/',[SiteContoller::class,'index'])->name('site.home');
+Route::get('/site/show/{id}',[SiteContoller::class,'show'])->name('site.show');
 
 Route::get('/registration/form',[AuthController::class,'loadRegisterForm']);
 Route::post('/register/user',[AuthController::class,'registerUser'])->name('registerUser');
