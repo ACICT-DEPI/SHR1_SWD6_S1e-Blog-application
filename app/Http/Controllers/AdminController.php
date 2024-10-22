@@ -106,7 +106,7 @@ class AdminController extends Controller
         $post = Post::findOrFail($id);
 
         if ($post) {
-            if (!empty($post->photo) && Storage::exists('public/images/'.$post->photo)) {
+            if (!empty($post->photo) && Storage::exists('public/images/'.$post->photo)&& $post->photo !="avatar.jpg") {
                 // Delete the image from storage
                 Storage::delete('public/images/'.$post->photo);
             }

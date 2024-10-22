@@ -11,7 +11,13 @@
       @endguest
       @auth
       <div class="login-register-container">
-          <a href="{{ url('/my/posts') }}" class="login-link">Dashboard</a>
+        @if (Auth::user()->role == 1)
+
+        <a href="{{ url('/admin/home') }}" class="login-link">Dashboard</a>
+        @else
+        <a href="{{ url('/user/home') }}" class="login-link">Dashboard</a>
+
+        @endif
 
         </div>
 

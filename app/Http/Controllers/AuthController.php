@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Session;
 
 class AuthController extends Controller
 {
-    
+
     public function loadRegisterForm(){
         return view("register");
     }
@@ -40,7 +40,7 @@ class AuthController extends Controller
             $user_profile->user_id = $user->id;
             $user_profile->save();
 
-            return redirect('/login/form')->with('success','You Have been Registered Successfully!');
+            return redirect('/user/home')->with('success','You Have been Registered Successfully!');
         } catch (\Exception $e) {
             return redirect('/registration/form')->with('error',$e->getMessage());
 
